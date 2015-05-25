@@ -1,6 +1,6 @@
 {
-  "name": "datm_0001",
-  "version": "0.1.0",
+  "name": "datm_0000",
+  "version": "0.0.0",
   "description": "everyday",
   "author": "Andrew Berg",
   "license": "MIT",
@@ -13,7 +13,6 @@
     "gulp-filter": "~2.0.2",
     "gulp-tag-version": "~1.2.1",
     "run-sequence": "~1.1.0",
-    "gif.js": "git+https://github.com/jnordberg/gif.js.git",
     "gulp-html-replace": "~1.4.5"
   }
 }
