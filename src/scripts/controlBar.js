@@ -129,7 +129,7 @@
 
 			onRecordUpdate = function(event){
 				console.log('frame');
-				gif.addFrame(createFrameImage(512, 200), {delay: 33});
+				gif.addFrame(createFrameImage(700, 270), {delay: 33});
 			},
 
 			createFrameImage = function(width, height){
