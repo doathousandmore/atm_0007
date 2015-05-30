@@ -5,7 +5,7 @@
 		
 		config = config || {};
 
-		var aspectRatio = 2.58,
+		var aspectRatio = config.aspectRation || 2.58,
 			
 			scene = (function(){
 				var scn = new THREE.Scene();
@@ -15,14 +15,23 @@
 			}()),
 
 			renderer = (function(){
-				var rnd = new THREE.WebGLRenderer();
+				var rnd = new THREE.WebGLRenderer({
+					canvas: config.canvas,
+					precision: config.precision,
+					alpha: config.alpha,
+					premultipliedAlpha: config.premultipliedAlpha,
+					antialias: config.antialias,
+					stencil: config.stencil,
+					preserveDrawingBuffer: config.preserveDrawingBuffer,
+					maxLights: config.maxLights
+				});
 				return function(){
 					return rnd;
 				}
 			}()),
 
 			camera = (function(){
-				var cam = new THREE.PerspectiveCamera( 60, aspectRatio, 0.1, 1000 );
+				var cam = new THREE.PerspectiveCamera( 60, aspectRatio, 1, 1000 );
 				return function(){
 					return cam;
 				}
