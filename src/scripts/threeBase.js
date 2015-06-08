@@ -14,6 +14,13 @@
 				}
 			}()),
 
+			camera = (function(){
+				var cam = new THREE.PerspectiveCamera( 60, aspectRatio, 1, 1000 );
+				return function(){
+					return cam;
+				}
+			}()),
+			
 			renderer = (function(){
 				var rnd = new THREE.WebGLRenderer({
 					canvas: config.canvas,
@@ -27,13 +34,6 @@
 				});
 				return function(){
 					return rnd;
-				}
-			}()),
-
-			camera = (function(){
-				var cam = new THREE.PerspectiveCamera( 60, aspectRatio, 1, 1000 );
-				return function(){
-					return cam;
 				}
 			}()),
 

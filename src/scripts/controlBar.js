@@ -1,7 +1,7 @@
 (function( ab, component, styles ){
 	"use strict";
 
-	ab.controlBar = function(loop, three){
+	ab.controlBar = function(loop, canvas){
 		var that = component(),
 			el,
 			hideTimeoutId,
@@ -140,8 +140,7 @@
 				canvasCopy.width = width || 384;
   				canvasCopy.height = height || 152;
 
-				three.renderer().render(three.scene(), three.camera());
-  				copyContext.drawImage(three.renderer().domElement, 0, 0, three.renderer().domElement.width, three.renderer().domElement.height, 0, 0, canvasCopy.width, canvasCopy.height)
+  				copyContext.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, canvasCopy.width, canvasCopy.height);
             	imgData = canvasCopy.toDataURL();
             	img.src = imgData;
 				return img;

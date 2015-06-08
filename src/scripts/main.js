@@ -3,7 +3,9 @@
 	"use strict";
 	
 	var loop = ab.gameLoop(),
-		three = ab.threeBase(),
+		three = ab.threeBase({
+			preserveDrawingBuffer : ab.controlBar ? true : false
+		}),
 		sketch = ab.sketch(three);
 
 	loop.addEventListener('frameupdate', function(event){
@@ -17,7 +19,6 @@
 
 		var interpolation = event.detail.interpolation;
 		sketch.draw(interpolation);
-		three.renderer().render(three.scene(), three.camera());
 
 	});
 
@@ -25,7 +26,7 @@
 	loop.start();
 
 	if(ab.controlBar){
-		ab.controlBar(loop, three);
+		ab.controlBar(loop, three.renderer().domElement);
 	}
 
 }())

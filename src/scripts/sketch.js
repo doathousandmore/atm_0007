@@ -41,6 +41,7 @@
 			
 			draw = function(interpolation){
 				THREE.Quaternion.slerp ( previousModel.quaternion, model.quaternion, container.quaternion, interpolation );
+				renderer.render(scene, camera);
 			}
 
 		return{
