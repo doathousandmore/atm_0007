@@ -15,7 +15,7 @@
 			}()),
 
 			camera = (function(){
-				var cam = new THREE.PerspectiveCamera( 60, aspectRatio, 1, 1000 );
+				var cam = new THREE.PerspectiveCamera( 50, aspectRatio, 1, 1000 );
 				return function(){
 					return cam;
 				}
